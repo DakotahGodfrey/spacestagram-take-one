@@ -1,0 +1,42 @@
+@use "MobileNav";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+  font-size: 10px;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+button {
+  font-family: inherit;
+  font-size: inherit;
+  background: transparent;
+  border: none;
+}
+
+.btn {
+  &-current {
+    svg {
+      color: #f88900;
+    }
+  }
+  &-icon {
+    min-width: 4.4rem;
+    min-height: 4.4rem;
+    svg {
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+}

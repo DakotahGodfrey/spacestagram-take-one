@@ -1,0 +1,10 @@
+.mobile-nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  justify-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 0 2rem;
+}
