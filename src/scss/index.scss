@@ -1,5 +1,6 @@
 @use "MobileNav";
 @use "ReactionBar";
+@use "Post";
 *,
 *::before,
 *::after {
@@ -42,4 +43,9 @@ button {
   &-heart {
     color: #e64e6f;
   }
+}
+main {
+  position: absolute;
+  width: 100%;
+  top: 61px;
 }

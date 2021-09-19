@@ -1,11 +1,13 @@
 import React from 'react';
-import { MobileHeader, MobileNav, ReactionBar } from '../components';
+import { MobileHeader, MobileNav, Post } from '../components';
 
 function App() {
   return (
     <div className='App'>
       <MobileHeader />
-      <ReactionBar />
+      <main>
+        <Post />
+      </main>
       <MobileNav />
     </div>
   );

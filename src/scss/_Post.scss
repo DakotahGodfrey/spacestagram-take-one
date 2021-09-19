@@ -1,0 +1,14 @@
+.post {
+  figure {
+    height: 44vh;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  p {
+    font-size: 1.6rem;
+    padding: 1rem 1.5rem;
+  }
+}
