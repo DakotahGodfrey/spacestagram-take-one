@@ -1,16 +1,18 @@
 import React from 'react';
 import { ReactionBar } from '.';
-import Placeholder from '../images/apod.jpeg';
-const Post = () => {
+interface PostProps {
+  post: {
+    imageSrc: string;
+    caption?: string;
+  };
+}
+const Post: React.FC<PostProps> = ({ post }) => {
   return (
     <div className='post'>
       <figure>
-        <img src={Placeholder} alt='placeholder post' />
+        <img src={post.imageSrc} alt='placeholder post' />
       </figure>
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci
-        quibusdam rerum saepe asperiores id.
-      </p>
+      {post.caption ?? <p>{post.caption}</p>}
       <ReactionBar />
     </div>
   );

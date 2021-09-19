@@ -3,4 +3,5 @@ import MobileNav from './MobileNav';
 import MobileHeader from './MobileHeader';
 import ReactionBar from './ReactionBar';
 import Post from './Post';
-export { MobileNav, Navbar, MobileHeader, ReactionBar, Post };
+import Feed from './Feed';
+export { MobileNav, Navbar, MobileHeader, ReactionBar, Post, Feed };
