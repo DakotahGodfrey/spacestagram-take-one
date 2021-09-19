@@ -1,2 +1,4 @@
 import Home from './Home';
-export { Home };
+import Trending from './Trending';
+
+export { Home, Trending };
