@@ -1,29 +1,17 @@
 import React from 'react';
-import { MobileHeader, MobileNav, Feed } from '../components';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { MobileHeader, MobileNav } from '../components';
+import { Home } from '../pages';
 
-const postArr = [
-  {
-    imageSrc: 'https://source.unsplash.com/1600x900/?space',
-    caption: '',
-  },
-  {
-    imageSrc: 'https://source.unsplash.com/1600x900/?space',
-    caption: '',
-  },
-  {
-    imageSrc: 'https://source.unsplash.com/1600x900/?space',
-    caption: '',
-  },
-];
 function App() {
   return (
-    <div className='App'>
-      <MobileHeader />
-      <main>
-        <Feed posts={postArr} />
-      </main>
-      <MobileNav />
-    </div>
+    <Router>
+      <div className='App'>
+        <MobileHeader />
+        <Route exact path='/' component={Home} />
+        <MobileNav />
+      </div>
+    </Router>
   );
 }
 
