@@ -40,6 +40,9 @@ button {
   &-icon {
     min-width: 4.4rem;
     min-height: 4.4rem;
+    align-items: center;
+    display: flex;
+    justify-content: center;
     svg {
       color: #333;
       width: 3rem;
