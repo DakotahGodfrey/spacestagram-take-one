@@ -1,8 +1,9 @@
 import React from 'react';
 import { Post } from '.';
+import { PostObject } from '../app/slices/posts';
 
 interface FeedProps {
-  posts: { imageSrc: string; caption?: string }[];
+  posts: PostObject[];
 }
 
 const Feed: React.FC<FeedProps> = ({ posts }) => {

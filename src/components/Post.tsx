@@ -1,18 +1,26 @@
 import React from 'react';
 import { ReactionBar } from '.';
+import { PostObject } from '../app/slices/posts';
 interface PostProps {
-  post: {
-    imageSrc: string;
-    caption?: string;
-  };
+  post: PostObject;
 }
 const Post: React.FC<PostProps> = ({ post }) => {
   return (
     <div className='post'>
-      <figure>
-        <img src={post.imageSrc} alt='placeholder post' />
-      </figure>
-      {post.caption ?? <p>{post.caption}</p>}
+      {post.media_type === 'image' ? (
+        <figure>
+          <img src={post.url} alt='placeholder post' />
+        </figure>
+      ) : (
+        <figure>
+          <iframe title={post.title} src={post.url}></iframe>
+        </figure>
+      )}
+      <h2>{post.title}</h2>
+      <div>
+        <span>{post.date}</span>
+      </div>
+      {post.explanation ? <p>{post.explanation}</p> : null}
       <ReactionBar />
     </div>
   );

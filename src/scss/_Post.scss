@@ -1,9 +1,16 @@
+.feed {
+  margin-bottom: 12.8rem;
+}
 .post {
   figure {
     height: 44vh;
+    iframe,
     img {
       height: 100%;
       width: 100%;
+      border: none;
+    }
+    img {
       object-fit: cover;
     }
   }

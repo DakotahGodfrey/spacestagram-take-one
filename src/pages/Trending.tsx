@@ -1,24 +1,19 @@
+import { useEffect } from 'react';
+import { useAppDispatch, useAppSelector } from '../app';
+import { getMostRecentPosts, selectPosts } from '../app/slices/posts';
 import { Feed } from '../components';
 
-const postArr = [
-  {
-    imageSrc: 'https://source.unsplash.com/1600x900/?space',
-    caption: '',
-  },
-  {
-    imageSrc: 'https://source.unsplash.com/1600x900/?space',
-    caption: '',
-  },
-  {
-    imageSrc: 'https://source.unsplash.com/1600x900/?space',
-    caption: '',
-  },
-];
-
 const Trending = () => {
+  const dispatch = useAppDispatch();
+  const postsSlice = useAppSelector(selectPosts);
+  const { posts } = postsSlice;
+
+  useEffect(() => {
+    dispatch(getMostRecentPosts());
+  }, [dispatch]);
   return (
     <main>
-      <Feed posts={postArr} />
+      <Feed posts={posts} />
     </main>
   );
 };
