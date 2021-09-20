@@ -17,8 +17,8 @@ const Post: React.FC<PostProps> = ({ post }) => {
         </figure>
       )}
       <h2>{post.title}</h2>
-      <div>
-        <span>{post.date}</span>
+      <div className='byline'>
+        <time>{post.date}</time>
       </div>
       {post.explanation ? <p>{post.explanation}</p> : null}
       <ReactionBar />

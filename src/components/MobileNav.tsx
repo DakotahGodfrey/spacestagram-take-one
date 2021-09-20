@@ -9,9 +9,6 @@ const MobileNav = () => {
       <Link to='/' className='btn-icon btn-nav btn-current'>
         <IoMdHome />
       </Link>
-      <Link to='/trending' className='btn-icon btn-nav'>
-        <AiTwotoneFire />
-      </Link>
       <Link to='/search' className='btn-icon btn-nav'>
         <IoMdSearch />
       </Link>
