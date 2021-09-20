@@ -1,7 +1,6 @@
 import React from 'react';
 import { IoMdHome, IoMdSearch } from 'react-icons/io';
 import { ImCog } from 'react-icons/im';
-import { AiTwotoneFire } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 const MobileNav = () => {
   return (
