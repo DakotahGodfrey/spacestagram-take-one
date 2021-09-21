@@ -1,6 +1,7 @@
-@use "MobileNav";
-@use "ReactionBar";
-@use "Post";
+@use 'MobileNav';
+@use 'ReactionBar';
+@use 'Post';
+@use 'DatePicker';
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
 *,
 *::before,
@@ -60,11 +61,12 @@ main {
   position: relative;
   width: 100%;
   top: 64px;
+  max-width: 80rem;
+  margin-inline: auto;
 }
 h2 {
   font-weight: bold;
   font-size: 2.4rem;
-  text-align: center;
 }
 time {
   font-size: 1.4rem;

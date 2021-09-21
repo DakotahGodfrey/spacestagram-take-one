@@ -1,0 +1,25 @@
+.form-control {
+  display: flex;
+  justify-content: space-evenly;
+  input,
+  select {
+    height: 4.4rem;
+    padding: 0 2rem;
+    border-radius: 2rem;
+    border: none;
+    font-size: 2rem;
+    background: #eee;
+  }
+}
+.date-picker {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .btn-icon {
+    align-self: center;
+    margin: 1rem 0;
+    width: 50%;
+    background-color: #eee;
+    border-radius: 2rem;
+  }
+}
