@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { ReactionBar } from '.';
 import { useAppDispatch, useAppSelector } from '../app';
 import { addToLikes, selectLikes } from '../app/slices/likes';
@@ -31,12 +32,16 @@ const Post: React.FC<PostProps> = ({ post }) => {
           <iframe title={post.title} src={post.url}></iframe>
         </figure>
       )}
-      <h2>{post.title}</h2>
+      <Link to={`post/${post.date}`}>
+        <h2>{post.title}</h2>
+      </Link>
       <div className='byline'>
         <time>{post.date}</time>
       </div>
       {post.explanation ? (
-        <p className='line-clamp fade'>{post.explanation}</p>
+        <Link to={`post/${post.date}`}>
+          <p className='line-clamp fade'>{post.explanation}</p>
+        </Link>
       ) : null}
 
       <ReactionBar liked={liked} handleLike={handleLike} />

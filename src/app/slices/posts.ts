@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import { PostObject } from '../../types';
 import { API_URL } from '../api';
 import { RootState } from '../store';
@@ -8,6 +8,7 @@ interface PostsState {
   results: PostObject[] | [];
   status: 'idle' | 'pending' | 'resolved';
   errors: boolean;
+  post: PostObject | {};
 }
 
 export const getMostRecentPosts = createAsyncThunk(
@@ -35,12 +36,21 @@ export const getPostsByMonth = createAsyncThunk(
     return data;
   }
 );
+export const getPostsByDate = createAsyncThunk(
+  'posts/getPostsByDate',
+  async (date: string) => {
+    const response = await fetch(`${API_URL}date=${date}`);
+    const data = await response.json();
+    return data;
+  }
+);
 
 const initialState: PostsState = {
   posts: [],
   results: [],
   status: 'idle',
   errors: false,
+  post: {},
 };
 const postsSlice = createSlice({
   name: 'posts',
@@ -51,11 +61,14 @@ const postsSlice = createSlice({
       state.errors = false;
       state.status = 'pending';
     });
-    builder.addCase(getMostRecentPosts.fulfilled, (state, { payload }) => {
-      state.errors = false;
-      state.status = 'resolved';
-      state.posts = payload.reverse();
-    });
+    builder.addCase(
+      getMostRecentPosts.fulfilled,
+      (state, action: PayloadAction<[]>) => {
+        state.errors = false;
+        state.status = 'resolved';
+        state.posts = action.payload.reverse();
+      }
+    );
     builder.addCase(getMostRecentPosts.rejected, (state) => {
       state.status = 'resolved';
       state.errors = true;
@@ -64,12 +77,31 @@ const postsSlice = createSlice({
       state.errors = false;
       state.status = 'pending';
     });
-    builder.addCase(getPostsByMonth.fulfilled, (state, { payload }) => {
-      state.errors = false;
-      state.status = 'resolved';
-      state.results = payload.reverse();
-    });
+    builder.addCase(
+      getPostsByMonth.fulfilled,
+      (state, action: PayloadAction<[]>) => {
+        state.errors = false;
+        state.status = 'resolved';
+        state.results = action.payload.reverse();
+      }
+    );
     builder.addCase(getPostsByMonth.rejected, (state) => {
+      state.status = 'resolved';
+      state.errors = true;
+    });
+    builder.addCase(getPostsByDate.pending, (state) => {
+      state.errors = false;
+      state.status = 'pending';
+    });
+    builder.addCase(
+      getPostsByDate.fulfilled,
+      (state, action: PayloadAction<PostObject>) => {
+        state.errors = false;
+        state.status = 'resolved';
+        state.post = action.payload;
+      }
+    );
+    builder.addCase(getPostsByDate.rejected, (state) => {
       state.status = 'resolved';
       state.errors = true;
     });
