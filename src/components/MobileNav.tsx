@@ -1,19 +1,35 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { IoMdHome, IoMdSearch } from 'react-icons/io';
 import { ImCog } from 'react-icons/im';
-import { Link } from 'react-router-dom';
-const MobileNav = () => {
+import { NavLink } from 'react-router-dom';
+interface MobileNavProps {
+  page: string;
+}
+const MobileNav: React.FC<MobileNavProps> = ({ page }) => {
   return (
     <footer className='mobile-nav'>
-      <Link to='/' className='btn-icon btn-nav btn-current'>
+      <NavLink
+        to='/'
+        exact
+        className='btn-icon btn-nav'
+        activeClassName='btn-current'
+      >
         <IoMdHome />
-      </Link>
-      <Link to='/search' className='btn-icon btn-nav'>
+      </NavLink>
+      <NavLink
+        to='/search'
+        className='btn-icon btn-nav'
+        activeClassName='btn-current'
+      >
         <IoMdSearch />
-      </Link>
-      <Link to='/settings' className='btn-icon btn-nav'>
+      </NavLink>
+      <NavLink
+        to='/settings'
+        className='btn-icon btn-nav'
+        activeClassName='btn-current'
+      >
         <ImCog />
-      </Link>
+      </NavLink>
     </footer>
   );
 };

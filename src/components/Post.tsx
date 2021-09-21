@@ -47,7 +47,7 @@ const Post: React.FC<PostProps> = ({ post, detailed }) => {
         </Link>
       ) : null}
 
-      <ReactionBar liked={liked} handleLike={handleLike} />
+      <ReactionBar liked={liked} handleLike={handleLike} date={post.date} />
     </div>
   );
 };

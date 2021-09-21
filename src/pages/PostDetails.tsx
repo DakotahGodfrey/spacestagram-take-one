@@ -17,7 +17,7 @@ const PostDetails: React.FC<PostDetailsProps> = ({ match }) => {
   if (post) {
     return (
       <main className='single-post'>
-        <Post post={post} detailed />;
+        <Post post={post} detailed />
       </main>
     );
   }
