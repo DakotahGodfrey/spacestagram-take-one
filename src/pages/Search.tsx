@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { DatePicker, Feed } from '../components';
+import { DatePicker, Feed, Loader } from '../components';
 import { useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../app';
 import { getPostsByMonth, selectPosts } from '../app/slices/posts';
@@ -7,7 +7,7 @@ import { getPostsByMonth, selectPosts } from '../app/slices/posts';
 const Search = () => {
   const dispatch = useAppDispatch();
   const postsSlice = useAppSelector(selectPosts);
-  const { results } = postsSlice;
+  const { results, status } = postsSlice;
   const currentYear = new Date().getFullYear();
   const [month, setMonth] = useState<number>(1);
   const [year, setYear] = useState<number>(2021);
@@ -41,7 +41,11 @@ const Search = () => {
         year={year}
         max={currentYear}
       />
-      <Feed posts={results} />
+      {results.length === 0 || status === 'pending' ? (
+        <Loader />
+      ) : (
+        <Feed posts={results} />
+      )}
     </main>
   );
 };
