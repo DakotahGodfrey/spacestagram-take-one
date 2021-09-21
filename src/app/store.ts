@@ -10,6 +10,7 @@ import {
   REGISTER,
 } from 'redux-persist';
 import postReducer from './slices/posts';
+import likesReducer from './slices/likes';
 import storage from 'redux-persist/lib/storage';
 
 const persistConfig = {
@@ -19,9 +20,10 @@ const persistConfig = {
 };
 
 const persistedPostReducer = persistReducer(persistConfig, postReducer);
+const persistedLikesReducer = persistReducer(persistConfig, likesReducer);
 
 export const store = configureStore({
-  reducer: { posts: persistedPostReducer },
+  reducer: { posts: persistedPostReducer, likes: persistedLikesReducer },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {

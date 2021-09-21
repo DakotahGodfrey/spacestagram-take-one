@@ -4,4 +4,14 @@
   height: 4.4rem;
   width: 100%;
   background-color: #fff;
+  .btn {
+    &-heart {
+      svg {
+        color: #cc3d5c;
+      }
+    }
+    &-share {
+      grid-column: 3;
+    }
+  }
 }
