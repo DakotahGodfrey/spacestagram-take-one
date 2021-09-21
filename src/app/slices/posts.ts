@@ -1,15 +1,8 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { PostObject } from '../../types';
 import { API_URL } from '../api';
 import { RootState } from '../store';
 
-export type PostObject = {
-  date: string;
-  explanation?: string;
-  hdurl?: string;
-  url: string;
-  title: string;
-  media_type: 'image' | 'video';
-};
 interface PostsState {
   posts: PostObject[] | [];
   status: 'idle' | 'pending' | 'resolved';
@@ -48,7 +41,7 @@ const postsSlice = createSlice({
     builder.addCase(getMostRecentPosts.fulfilled, (state, { payload }) => {
       state.errors = false;
       state.status = 'resolved';
-      state.posts = payload;
+      state.posts = payload.reverse();
     });
     builder.addCase(getMostRecentPosts.rejected, (state) => {
       state.status = 'resolved';

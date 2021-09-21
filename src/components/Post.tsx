@@ -1,6 +1,6 @@
 import React from 'react';
 import { ReactionBar } from '.';
-import { PostObject } from '../app/slices/posts';
+import { PostObject } from '../types';
 interface PostProps {
   post: PostObject;
 }
@@ -20,7 +20,10 @@ const Post: React.FC<PostProps> = ({ post }) => {
       <div className='byline'>
         <time>{post.date}</time>
       </div>
-      {post.explanation ? <p>{post.explanation}</p> : null}
+      {post.explanation ? (
+        <p className='line-clamp fade'>{post.explanation}</p>
+      ) : null}
+
       <ReactionBar />
     </div>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Post } from '.';
-import { PostObject } from '../app/slices/posts';
+import { PostObject } from '../types';
 
 interface FeedProps {
   posts: PostObject[];
