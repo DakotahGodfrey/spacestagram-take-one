@@ -6,7 +6,7 @@ import { Feed, Loader } from '../components';
 const Home = () => {
   const dispatch = useAppDispatch();
   const postsSlice = useAppSelector(selectPosts);
-  const { posts, status } = postsSlice;
+  const { posts } = postsSlice;
 
   useEffect(() => {
     dispatch(getMostRecentPosts());
