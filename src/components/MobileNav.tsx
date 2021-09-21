@@ -1,11 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { IoMdHome, IoMdSearch } from 'react-icons/io';
 import { ImCog } from 'react-icons/im';
 import { NavLink } from 'react-router-dom';
-interface MobileNavProps {
-  page: string;
-}
-const MobileNav: React.FC<MobileNavProps> = ({ page }) => {
+
+const MobileNav: React.FC = () => {
   return (
     <footer className='mobile-nav'>
       <NavLink

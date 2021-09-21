@@ -13,7 +13,7 @@ function App() {
           <Route exact path='/search' component={Search} />
           <Route path={'/post/:date'} component={PostDetails} />
         </Switch>
-        <MobileNav page={window.location.href} />
+        <MobileNav />
       </div>
     </Router>
   );
