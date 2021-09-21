@@ -8,7 +8,7 @@ interface PostsState {
   results: PostObject[] | [];
   status: 'idle' | 'pending' | 'resolved';
   errors: boolean;
-  post: PostObject | {};
+  post: PostObject | null;
 }
 
 export const getMostRecentPosts = createAsyncThunk(
@@ -50,7 +50,7 @@ const initialState: PostsState = {
   results: [],
   status: 'idle',
   errors: false,
-  post: {},
+  post: null,
 };
 const postsSlice = createSlice({
   name: 'posts',
@@ -90,6 +90,7 @@ const postsSlice = createSlice({
       state.errors = true;
     });
     builder.addCase(getPostsByDate.pending, (state) => {
+      state.post = null;
       state.errors = false;
       state.status = 'pending';
     });

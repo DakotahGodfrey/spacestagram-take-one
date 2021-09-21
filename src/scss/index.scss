@@ -63,6 +63,9 @@ main {
   top: 64px;
   max-width: 80rem;
   margin-inline: auto;
+  &.single-post {
+    margin-bottom: 12.8rem;
+  }
 }
 h2 {
   font-weight: bold;

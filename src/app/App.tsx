@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { MobileHeader, MobileNav } from '../components';
 import { Home, PostDetails, Search } from '../pages';
 
@@ -8,9 +8,11 @@ function App() {
     <Router>
       <div className='App'>
         <MobileHeader />
-        <Route exact path='/' component={Home} />
-        <Route exact path='/search' component={Search} />
-        <Route exact path='/post/:date' component={PostDetails} />
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route exact path='/search' component={Search} />
+          <Route path={'/post/:date'} component={PostDetails} />
+        </Switch>
         <MobileNav />
       </div>
     </Router>

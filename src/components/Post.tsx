@@ -6,8 +6,9 @@ import { addToLikes, selectLikes } from '../app/slices/likes';
 import { PostObject } from '../types';
 interface PostProps {
   post: PostObject;
+  detailed?: boolean;
 }
-const Post: React.FC<PostProps> = ({ post }) => {
+const Post: React.FC<PostProps> = ({ post, detailed }) => {
   const dispatch = useAppDispatch();
   const likesSlice = useAppSelector(selectLikes);
   const [liked, setLiked] = useState<boolean>(false);
@@ -20,7 +21,7 @@ const Post: React.FC<PostProps> = ({ post }) => {
     if (likes.includes(post.date)) {
       setLiked(true);
     }
-  }, [likes]);
+  }, [likes, post.date]);
   return (
     <div className='post'>
       {post.media_type === 'image' ? (
@@ -40,7 +41,9 @@ const Post: React.FC<PostProps> = ({ post }) => {
       </div>
       {post.explanation ? (
         <Link to={`post/${post.date}`}>
-          <p className='line-clamp fade'>{post.explanation}</p>
+          <p className={!detailed ? 'line-clamp fade' : ''}>
+            {post.explanation}
+          </p>
         </Link>
       ) : null}
 
