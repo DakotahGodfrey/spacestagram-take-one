@@ -65,7 +65,7 @@ main {
   max-width: 80rem;
   margin-inline: auto;
   &.single-post {
-    margin-bottom: 12.8rem;
+    padding-bottom: 12.8rem;
   }
 }
 h2 {
@@ -83,5 +83,45 @@ p {
 .date-control {
   input {
     font-size: 1.6rem;
+  }
+}
+
+.App-Dark {
+  background-color: #000;
+  .settings {
+    background-color: #000;
+  }
+  .fade::after {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), black 50%);
+  }
+  a {
+    color: #fff;
+  }
+  a.btn-icon {
+    svg {
+      color: #fff;
+    }
+  }
+  a.btn-current {
+    svg {
+      color: #f88900;
+    }
+  }
+  .reaction-bar {
+    background-color: #111;
+    border: 1px solid #fff;
+    button.btn-icon.btn-share {
+      svg {
+        color: #fff;
+      }
+    }
+  }
+  header,
+  footer {
+    background-color: #111;
+
+    main {
+      background-color: #333;
+    }
   }
 }
