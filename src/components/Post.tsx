@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ReactionBar } from '.';
 import { useAppDispatch, useAppSelector } from '../app';
 import { addToLikes, selectLikes } from '../app/slices/likes';
+import { selectSettings } from '../app/slices/settings';
 import { PostObject } from '../types';
 interface PostProps {
   post: PostObject;
@@ -11,8 +12,10 @@ interface PostProps {
 const Post: React.FC<PostProps> = ({ post, detailed }) => {
   const dispatch = useAppDispatch();
   const likesSlice = useAppSelector(selectLikes);
+  const settingsSlice = useAppSelector(selectSettings);
   const [liked, setLiked] = useState<boolean>(false);
   const { likes } = likesSlice;
+  const { useHDSetting } = settingsSlice;
   const handleLike = () => {
     dispatch(addToLikes(post.date));
     setLiked(!liked);
@@ -26,7 +29,10 @@ const Post: React.FC<PostProps> = ({ post, detailed }) => {
     <div className='post'>
       {post.media_type === 'image' ? (
         <figure>
-          <img src={post.url} alt='placeholder post' />
+          <img
+            src={useHDSetting ? post.hdurl : post.url}
+            alt='placeholder post'
+          />
         </figure>
       ) : (
         <figure>

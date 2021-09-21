@@ -1,12 +1,16 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { useAppSelector } from '.';
 import { MobileHeader, MobileNav } from '../components';
 import { Home, PostDetails, Search, Settings } from '../pages';
+import { selectSettings } from './slices/settings';
 
 function App() {
+  const settingsSlice = useAppSelector(selectSettings);
+  const { darkModeSetting } = settingsSlice;
   return (
     <Router>
-      <div className='App'>
+      <div className={darkModeSetting ? 'App-Dark' : 'App'}>
         <MobileHeader />
         <Switch>
           <Route exact path='/' component={Home} />

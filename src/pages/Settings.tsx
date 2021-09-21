@@ -8,6 +8,7 @@ const Settings = () => {
   const dispatch = useAppDispatch();
   const [useHD, setUseHD] = useState<boolean>(useHDSetting);
   const [darkMode, setDarkMode] = useState<boolean>(darkModeSetting);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log(useHD, darkMode);
@@ -15,6 +16,7 @@ const Settings = () => {
       updateSettings({ useHDSetting: useHD, darkModeSetting: darkMode })
     );
   };
+
   return (
     <main className='settings'>
       <form onSubmit={(e) => handleSubmit(e)}>
@@ -24,6 +26,7 @@ const Settings = () => {
           <input
             id='hd-images'
             type='checkbox'
+            checked={useHD}
             onChange={() => setUseHD(!useHD)}
           />
         </div>
@@ -32,6 +35,7 @@ const Settings = () => {
           <input
             id='dark-mode'
             type='checkbox'
+            checked={darkMode}
             onChange={() => setDarkMode(!darkMode)}
           />
         </div>
