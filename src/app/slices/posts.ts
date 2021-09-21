@@ -27,7 +27,6 @@ export const getMostRecentPosts = createAsyncThunk(
 export const getPostsByMonth = createAsyncThunk(
   'posts/getPostsByMonth',
   async (dates: { startDate: string; endDate: string }) => {
-    console.log('passed');
     const { startDate, endDate } = dates;
     const response = await fetch(
       `${API_URL}start_date=${startDate}&end_date=${endDate}`

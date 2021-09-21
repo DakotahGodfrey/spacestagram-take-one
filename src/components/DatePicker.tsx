@@ -18,7 +18,6 @@ const DatePicker: React.FC<DatePickerProps> = ({
   max,
   handleSubmit,
 }) => {
-  console.log(month);
   return (
     <form onSubmit={handleSubmit} className='date-picker'>
       <div className='form-control'>
