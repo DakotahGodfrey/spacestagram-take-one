@@ -14,7 +14,13 @@ const ReactionBar: React.FC<ReactionBarProps> = ({
   return (
     <div className='reaction-bar'>
       <button className='btn-icon btn-heart' onClick={() => handleLike()}>
-        {liked ? <AiFillHeart /> : <AiOutlineHeart />}
+        {liked ? (
+          <i className='filled'>
+            <AiFillHeart />
+          </i>
+        ) : (
+          <AiOutlineHeart />
+        )}
       </button>
       <button
         className='btn-icon btn-share'
