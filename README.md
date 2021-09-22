@@ -2,17 +2,20 @@
 
 Spacestagram is my entry for the Shopify Winter 2022 Front End Internship. I built Spacestagram 🚀 using Typescript, React and Redux Toolkit.
 
-- [Spacestagram 🚀](#spacestagram-)
-  - [Gallery](#gallery)
-  - [Features](#features)
-  - [Design Notes](#design-notes)
-  - [Technology Used](#technology-used)
-  - [Available Scripts](#available-scripts)
-    - [`yarn start`](#yarn-start)
+- [Live Demo](#live-demo)
+- [Gallery](#gallery)
+- [Features](#features)
+- [Design Notes](#design-notes)
+- [Technology Used](#technology-used)
+- [Available Scripts](#available-scripts)
+  - [`yarn start`](#yarn-start)
     - [`yarn test`](#yarn-test)
     - [`yarn build`](#yarn-build)
     - [`yarn eject`](#yarn-eject)
 
+## Live Demo
+You can view the site at the link below:
+[Spacestagram.netlify.app](https://spacestagram-shopify-challenge.netlify.app/)
 ## Gallery
 <img width="400" src="https://user-images.githubusercontent.com/78933339/134264696-f63bf521-5865-48eb-bd1e-7e6136d86895.png"/>
 <img width="400" src="https://user-images.githubusercontent.com/78933339/134264690-de16b586-ae2d-4751-a8d7-67aeb46f1ad3.png"/>
