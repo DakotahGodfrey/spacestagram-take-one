@@ -3,11 +3,8 @@
 Spacestagram is my entry for the Shopify Winter 2022 Front End Internship. I built Spacestagram 🚀 using Typescript, React and Redux Toolkit.
 
 - [Spacestagram 🚀](#spacestagram-)
-  - [Demo](#demo)
   - [Gallery](#gallery)
-  - [Installation Instructions](#installation-instructions)
   - [Features](#features)
-  - [Testing](#testing)
   - [Design Notes](#design-notes)
   - [Technology Used](#technology-used)
   - [Available Scripts](#available-scripts)
@@ -16,19 +13,25 @@ Spacestagram is my entry for the Shopify Winter 2022 Front End Internship. I bui
     - [`yarn build`](#yarn-build)
     - [`yarn eject`](#yarn-eject)
 
-## Demo
-
 ## Gallery
-
-## Installation Instructions
 
 ## Features
 
-## Testing
+Users are able to see the last month's worth of Apod Pictures via the homepage. Users can view posts form previous months using the search page and date picker. User's have the option of loading images in either Standard or High Definition, as well as a darker theme.
 
 ## Design Notes
 
+I decided to use Instagram as an inspiration when creating my wireframes. The wireframes and components used for this project can be viewed [here on Figma](https://www.figma.com/file/j3GYMw236yOwVpjwpZOyrt/Spacestagram?node-id=1%3A6). Due to issues with the NASA APOD Api concerning search and image rankings the final product varied a bit from my original wireframes.
+
 ## Technology Used
+
+This Project Made use of the following:
+
+- React
+- @Redux/ToolkitJS
+- Typescript
+- SCSS
+- Redux Persist
 
 ## Available Scripts
 
