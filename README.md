@@ -14,6 +14,11 @@ Spacestagram is my entry for the Shopify Winter 2022 Front End Internship. I bui
     - [`yarn eject`](#yarn-eject)
 
 ## Gallery
+![localhost_3000_(iPhone 5_SE) (4)](https://user-images.githubusercontent.com/78933339/134264689-c9bb601e-2b90-40d2-83a0-e994e6288830.png)
+![localhost_3000_(iPhone 5_SE) (3)](https://user-images.githubusercontent.com/78933339/134264690-de16b586-ae2d-4751-a8d7-67aeb46f1ad3.png)
+![localhost_3000_(iPhone 5_SE) (2)](https://user-images.githubusercontent.com/78933339/134264692-e317d075-8d15-49c8-9bc5-063f8281617a.png)
+![localhost_3000_(iPhone 5_SE) (1)](https://user-images.githubusercontent.com/78933339/134264696-f63bf521-5865-48eb-bd1e-7e6136d86895.png)
+
 
 ## Features
 
