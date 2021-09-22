@@ -5,6 +5,7 @@ Spacestagram is my entry for the Shopify Winter 2022 Front End Internship. I bui
 - [Gallery](#gallery)
 - [Features](#features)
 - [Design Notes](#design-notes)
+- [Plans for Future Updates](#plans-for-future-updates)
 - [Technology Used](#technology-used)
 - [Available Scripts](#available-scripts)
   - [`yarn start`](#yarn-start)
