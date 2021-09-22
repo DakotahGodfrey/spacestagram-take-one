@@ -2,18 +2,20 @@
 
 Spacestagram is my entry for the Shopify Winter 2022 Front End Internship. I built Spacestagram 🚀 using Typescript, React and Redux Toolkit.
 
-- [Spacestagram 🚀](#spacestagram-)
-  - [Gallery](#gallery)
-  - [Features](#features)
-  - [Design Notes](#design-notes)
-  - [Technology Used](#technology-used)
-  - [Available Scripts](#available-scripts)
-    - [`yarn start`](#yarn-start)
+- [Gallery](#gallery)
+- [Features](#features)
+- [Design Notes](#design-notes)
+- [Technology Used](#technology-used)
+- [Available Scripts](#available-scripts)
+  - [`yarn start`](#yarn-start)
     - [`yarn test`](#yarn-test)
     - [`yarn build`](#yarn-build)
     - [`yarn eject`](#yarn-eject)
 
 ## Gallery
+<img width="400" src="https://user-images.githubusercontent.com/78933339/134271852-536382fb-9c1a-438d-8198-2584c7cd4ac0.png" />
+<img width="400" src="https://user-images.githubusercontent.com/78933339/134271856-09766b47-4f48-4bb6-8483-3050057e5f1f.png" />
+<img width="400" src="https://user-images.githubusercontent.com/78933339/134271859-4b151e12-8ac7-4814-843e-50d17773b5a1.png" />
 
 ## Features
 
@@ -22,6 +24,12 @@ Users are able to see the last month's worth of Apod Pictures via the homepage. 
 ## Design Notes
 
 I decided to use Instagram as an inspiration when creating my wireframes. The wireframes and components used for this project can be viewed [here on Figma](https://www.figma.com/file/j3GYMw236yOwVpjwpZOyrt/Spacestagram?node-id=1%3A6). Due to issues with the NASA APOD Api concerning search and image rankings the final product varied a bit from my original wireframes.
+
+## Plans for Future Updates
+
+- Add stronger type annotations for better type safety. 
+- Address accessibility concerns surrounding screenreaders. 
+- Update and enhance animations. 
 
 ## Technology Used
 
